@@ -13,7 +13,7 @@ class App extends Component {
         }
     }
     updatePrice = (price) => {
-        console.log(price);
+        this.setState({ total: this.state.total += price});
     }
     render() {
         return (
