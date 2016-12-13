@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-import App from './components/App';
+import GroceryContainer from './components/GroceryContainer';
 
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<GroceryContainer />, document.getElementById('app'));
