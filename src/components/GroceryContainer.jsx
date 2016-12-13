@@ -13,23 +13,27 @@ class GroceryContainer extends Component {
         this.state = {
             items: groceryData,
             total: 0,
-            list: []
+            groceryCart: []
         }
     }
     priceFormat = (price) => {
         return (price).toFixed(2);
     }
+
     updatePrice = (price) => {
         this.setState({ total: this.state.total += price});
     }
-    doesItemExists = (item) => {
-        console.log(this.state.list.includes(item));
-    }
+
     handleItemClick = (item) => {
-        this.doesItemExists(item);
-        this.state.list.push(item);
-        this.setState({list: this.state.list});
-        console.log(this.priceFormat(this.state.total));
+        if( this.state.groceryCart.includes(item) ) {
+            let itemIndex = this.state.groceryCart.indexOf(item);
+            this.state.groceryCart[itemIndex]["quantity"] += 1;
+            console.log(this.state.groceryCart[itemIndex]["quantity"]);
+        } else {
+            this.state.groceryCart.push(item);
+        }
+        console.log(this.state.groceryCart);
+        this.setState({groceryCart: this.state.groceryCart});
         this.updatePrice(item.price);
     }
     render() {

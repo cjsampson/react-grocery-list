@@ -3,109 +3,127 @@ const groceryData = [
         'id': 1,
         'item': 'bread',
         'price': 3.29,
-        'image': '../images/bread.jpeg'
+        'image': '../images/bread.jpeg',
+        'quantity': 0,
     },
     {
         'id': 2,
         'item': 'cheese',
         'price': 3.78,
-        'image': '../images/cheese.jpeg'
+        'image': '../images/cheese.jpeg',
+        'quantity': 0,        
     },
     {
         'id': 3,
         'item': 'kefir',
         'price': 2.39,
-        'image': '../images/kefir.png'
+        'image': '../images/kefir.png',
+        'quantity': 0,
     },
     {
         'id': 4,
         'item': 'mustard',
         'price': 1.59,
-        'image': '../images/mustard.jpeg'
+        'image': '../images/mustard.jpeg',
+        'quantity': 0,
     },
     {
         'id': 5,
         'item': 'olive oil',
         'price': 2.99,
-        'image': '../images/olive-oil.jpeg'
+        'image': '../images/olive-oil.jpeg',
+        'quantity': 0,
     },
     {
         'id': 6,
         'item': 'oranges',
         'price': 3.00,
-        'image': '../images/orange.jpeg'
+        'image': '../images/orange.jpeg',
+        'quantity': 0,
     },
     {
         'id': 7,
         'item': 'paper towels',
         'price': 3.25,
-        'image': '../images/paper-towel.jpeg'
+        'image': '../images/paper-towel.jpeg',
+        'quantity': 0,
     },
     {
         'id': 8,
         'item': 'pasta',
         'price': 2.10,
-        'image': '../images/pasta.jpeg'
+        'image': '../images/pasta.jpeg',
+        'quantity': 0,
     },
     {
         'id': 9,
         'item': 'peanut-butter',
         'price': 4.00,
-        'image': '../images/peanut-butter.jpeg'
+        'image': '../images/peanut-butter.jpeg',
+        'quantity': 0,
     },
     {
         'id': 10,
         'item': 'pepper',
         'price': 1.25,
-        'image': '../images/pepper.jpeg'
+        'image': '../images/pepper.jpeg',
+        'quantity': 0,
     },
     {
         'id': 11,
         'item': 'rice',
         'price': 5.19,
-        'image': '../images/rice.jpeg'
+        'image': '../images/rice.jpeg',
+        'quantity': 0,
     },
     {
         'id': 12,
         'item': 'salmon',
         'price': 7.89,
-        'image': '../images/salmon.jpeg'
+        'image': '../images/salmon.jpeg',
+        'quantity': 0,
     },
     {
         'id': 13,
         'item': 'salt',
         'price': 1.25,
-        'image': '../images/salt.jpeg'
+        'image': '../images/salt.jpeg',
+        'quantity': 0,
     },
     {
         'id': 14,
         'item': 'soy sauce',
         'price': 2.26,
-        'image': '../images/soy-sauce.jpeg'
+        'image': '../images/soy-sauce.jpeg',
+        'quantity': 0,
     },
     {
         'id': 15,
         'item': 'spinach',
         'price': 4.39,
-        'image': '../images/spinach.jpeg'
+        'image': '../images/spinach.jpeg',
+        'quantity': 0,
     },
     {
         'id': 16,
         'item': 'sriracha',
         'price': 3.45,
-        'image': '../images/sriracha.jpeg'
+        'image': '../images/sriracha.jpeg',
+        'quantity': 0,
     },
     {
         'id': 17,
         'item': 'tomatos',
         'price': 2.88,
-        'image': '../images/tomato.jpeg'
+        'image': '../images/tomato.jpeg',
+        'quantity': 0,
     },
     {
         'id': 18,
         'item': 'water bottle',
         'price': 2.68,
-        'image': '../images/water.jpeg'
+        'image': '../images/water.jpeg',
+        'quantity': 0,
     },
 ];
 
