@@ -39,7 +39,7 @@ const groceryData = [
         'id': 7,
         'item': 'paper towels',
         'price': 3.25,
-        'image': '../images/paper-towl.jpeg'
+        'image': '../images/paper-towel.jpeg'
     },
     {
         'id': 8,

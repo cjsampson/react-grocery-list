@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 
 import groceryData from '../data/groceryData';
+import '../styles/grocery.sass';
 
 
 class App extends Component {
     constructor() {
         super(); 
         this.state = {
-            items: groceryData
+            items: groceryData,
+            total: 0,
         }
+    }
+    updatePrice = (price) => {
+        console.log(price);
     }
     render() {
         return (
             <div>
+                <span>{this.state.total}</span>
                 <ul>
                     {groceryData.map(item =>
-                        <li key={item.id}>
-                            <img src={item.image} />
-                            {item.item}
+                        <li key={item.id} className="list-item" onClick={() => this.updatePrice(item.price)}>
+                            <div className="item-container">
+                                <img className="image" src={item.image} />
+                                <p>{item.item} : <span>{item.price}</span></p>                                
+                            </div>
                         </li>                        
                     )}
                 </ul>
