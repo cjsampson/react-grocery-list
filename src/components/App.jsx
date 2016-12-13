@@ -16,7 +16,7 @@ class App extends Component {
         }
     }
     priceFormat = (price) => {
-        return (this.state.total).toFixed(2);
+        return (price).toFixed(2);
     }
     updatePrice = (price) => {
         this.setState({ total: this.state.total += price});
@@ -39,12 +39,10 @@ class App extends Component {
                             <figure>
                                 <img className="image" src={item.image} />
                             </figure>
-                            <p>{item.item} : <span>{item.price}</span></p>                                
+                            <p>{item.item} : <span>{this.priceFormat(item.price)}</span></p>                                
                         </div>
                     </li>                        
                 )}
-                
-                
             </div>
         );
     }
