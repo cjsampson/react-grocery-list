@@ -21,18 +21,21 @@ class GroceryContainer extends Component {
     }
 
     updatePrice = (price) => {
-        this.setState({ total: this.state.total += price});
+        this.setState({ total: this.state.total += price });
     }
 
     handleItemClick = (item) => {
+        let index = this.state.groceryCart.indexOf(item);
         if( this.state.groceryCart.includes(item) ) {
-            let itemIndex = this.state.groceryCart.indexOf(item);
-            this.state.groceryCart[itemIndex].quantity += 1;
-            console.log(this.state.groceryCart[itemIndex]["quantity"]);
+            if( this.state.groceryCart[index].quantity < 1)
+                this.state.groceryCart[index].quantity += 2;
+            else
+                this.state.groceryCart[index].quantity += 1;
         } else {
             this.state.groceryCart.push(item);
         }
-        console.log(this.state.groceryCart);
+
+        
         this.setState({groceryCart: this.state.groceryCart});
         this.updatePrice(item.price);
     }
@@ -40,7 +43,7 @@ class GroceryContainer extends Component {
         return (
             <div className="rootDiv">
                 <div className="grocery-list-items">                    
-                    {groceryData.map(item =>
+                    {this.state.items.map(item =>
                         <li key={item.id} className="list-item" onClick={() => this.handleItemClick(item)}>
                             <div className="item-container">
                                 <figure>

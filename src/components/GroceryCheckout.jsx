@@ -15,8 +15,8 @@ class GroceryCheckout extends Component {
         return price.toFixed(2);
     }
 
-    outputPrice = () => {
-        console.log(this.state.list)
+    outputPrice = (price) => {
+        console.log(this.props.items)
     }
 
     render() {
@@ -25,7 +25,7 @@ class GroceryCheckout extends Component {
                 <h1 className="total">Grocery Checkout</h1>
                 <h3>Total: {this.priceFormat(this.props.total)}</h3>
                 <ul>{this.props.items.map(item =>
-                    <li key={item.id}>{item.item} x {item.quantity}</li>
+                    <li key={item.id}>{item.item} {item.quantity ? `x ${item.quantity}` : ''}</li>
                 )}</ul>
             </div>
         );
