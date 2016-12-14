@@ -27,7 +27,7 @@ class GroceryContainer extends Component {
     handleItemClick = (item) => {
         if( this.state.groceryCart.includes(item) ) {
             let itemIndex = this.state.groceryCart.indexOf(item);
-            this.state.groceryCart[itemIndex]["quantity"] += 1;
+            this.state.groceryCart[itemIndex].quantity += 1;
             console.log(this.state.groceryCart[itemIndex]["quantity"]);
         } else {
             this.state.groceryCart.push(item);
@@ -51,7 +51,7 @@ class GroceryContainer extends Component {
                         </li>                        
                     )}                
                 </div>
-                <GroceryCheckout items={this.state.list} total={this.state.total} />
+                <GroceryCheckout items={this.state.groceryCart} total={this.state.total} />
             </div>
         );
     }
