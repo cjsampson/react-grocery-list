@@ -39,6 +39,15 @@ class GroceryContainer extends Component {
         this.setState({groceryCart: this.state.groceryCart});
         this.updatePrice(item.price);
     }
+
+    increaseQuantity = (item) => {
+        console.log("increase item");
+    }
+
+    decreaseQuantity = (item) => {
+        console.log("decrease item");
+    }
+
     render() {
         return (
             <div className="rootDiv">
@@ -54,7 +63,12 @@ class GroceryContainer extends Component {
                         </li>                        
                     )}                
                 </div>
-                <GroceryCheckout items={this.state.groceryCart} total={this.state.total} />
+                <GroceryCheckout 
+                    items={this.state.groceryCart}
+                    total={this.state.total}
+                    increase={this.increaseQuantity}
+                    decrease={this.decreaseQuantity}
+                />
             </div>
         );
     }
