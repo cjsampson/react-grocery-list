@@ -27,7 +27,7 @@ class GroceryCheckout extends Component {
                 <ul>{this.props.items.map(item =>
                     <li key={item.id}>
                         <span>{item.item} {item.quantity ? `x ${item.quantity}` : ''}</span>
-                        <span onClick={this.props.increase}> +</span>
+                        <span onClick={() => this.props.increase(item)}> +</span>
                         <span onClick={this.props.decrease}> -</span>
                     </li>
                 )}</ul>

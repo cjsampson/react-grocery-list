@@ -41,7 +41,7 @@ class GroceryContainer extends Component {
     }
 
     increaseQuantity = (item) => {
-        console.log("increase item");
+        console.log(this.state.groceryCart[item]);
     }
 
     decreaseQuantity = (item) => {
