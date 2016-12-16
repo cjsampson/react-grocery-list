@@ -28,7 +28,7 @@ class GroceryCheckout extends Component {
                     <li key={item.id}>
                         <span>{item.item} {item.quantity ? `x ${item.quantity}` : ''}</span>
                         <span onClick={() => this.props.increase(item)}> +</span>
-                        <span onClick={this.props.decrease}> -</span>
+                        <span onClick={() => this.props.decrease(item)}> -</span>
                     </li>
                 )}</ul>
             </div>
