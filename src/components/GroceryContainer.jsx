@@ -24,46 +24,22 @@ class GroceryContainer extends Component {
         this.setState({ total: this.state.total += price });
     }
 
-    handleItemClick = (item) => {
-        let index = this.state.groceryCart.indexOf(item);
-        if( this.state.groceryCart.includes(item) ) {
-            if( this.state.groceryCart[index].quantity < 1)
-                this.state.groceryCart[index].quantity += 2;
-            else
-                this.state.groceryCart[index].quantity += 1;
-        } else {
-            this.state.groceryCart.push(item);
-        }
-        
-        this.setState({groceryCart: this.state.groceryCart});
-        this.updatePrice(item.price);
+    increaseQuantity = (item) => {
+        let list = this.state.groceryCart;
+
+        let increase = Object.assign( {}, item, {
+            quantity: item.quantity += 1
+        });
+
+        let insert = list.find( item => item.name ) ? return [...list, increase]
+
+        this.setState({ groceryCart: increase});
+
+        console.log(this.state.groceryCart);
     }
 
-    increaseQuantity = (item, val = null) => {
-        let index = this.state.groceryCart.indexOf(item);
-        this.state.groceryCart[index].quantity += 1;
-        this.setState({groceryCart: this.state.groceryCart });
-        this.updatePrice(item.price);
-    }
+    decreaseQuantity = () => {
 
-    decreaseQuantity = (item) => {
-        let index = this.state.groceryCart.indexOf(item);
-        if( this.state.groceryCart[index].quanity === 1) {
-            this.state.groceryCart.splice(index, 1);
-        } else {
-            this.state.groceryCart[index].quantity -= 1;
-        }
-        this.state.groceryCart[index].quantity -= 1;
-        this.setState({groceryCart: this.state.groceryCart });
-        this.updatePrice(item.price);
-
-    }
-
-    sampleReduce = item => {
-        let total = this.state.groceryCart.reduce( (sum, current) => 
-            sum + (current.quantity * current.price), 0
-        )
-        console.log(total.toFixed(2));
     }
 
     render() {
@@ -73,7 +49,7 @@ class GroceryContainer extends Component {
                     {this.state.items.map(item =>
                         <li key={item.id} 
                             className="list-item" 
-                            onClick={ () => { this.handleItemClick(item), this.sampleReduce(item) }}
+                            onClick={ () => this.increaseQuantity(item) }
                         >
                             <div className="item-container">
                                 <figure>
@@ -87,12 +63,7 @@ class GroceryContainer extends Component {
                         </li>                        
                     )}                
                 </div>
-                <GroceryCheckout 
-                    items={this.state.groceryCart}
-                    total={this.state.total}
-                    increase={this.increaseQuantity}
-                    decrease={this.decreaseQuantity}
-                />
+
             </div>
         );
     }

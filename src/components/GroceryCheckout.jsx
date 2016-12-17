@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 
+import '../styles/grocery.sass';
+
 class GroceryCheckout extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            list: this.props.items
-        }
-    }
     groceryCart = () => {
         let cart = this.state.list;
     }
@@ -26,9 +22,7 @@ class GroceryCheckout extends Component {
                 <h3>Total: {this.priceFormat(this.props.total)}</h3>
                 <ul>{this.props.items.map(item =>
                     <li key={item.id}>
-                        <span>{item.item} {item.quantity ? `x ${item.quantity}` : ''}</span>
-                        <span onClick={() => this.props.increase(item)}> +</span>
-                        <span onClick={() => this.props.decrease(item)}> -</span>
+                        <p>{item.item} {item.quantity ? `x ${item.quantity}` : ''}</p>
                     </li>
                 )}</ul>
             </div>
