@@ -24,32 +24,15 @@ class GroceryContainer extends Component {
         this.setState({ total: this.state.total += price });
     }
 
-    increaseQuantity = (item) => {
-        let list = this.state.groceryCart;
-
-        let increase = Object.assign( {}, item, {
-            quantity: item.quantity += 1
-        });
-
-        let insert = list.find( item => item.name ) ? return [...list, increase]
-
-        this.setState({ groceryCart: increase});
-
-        console.log(this.state.groceryCart);
-    }
-
-    decreaseQuantity = () => {
-
-    }
-
     render() {
         return (
             <div className="rootDiv">
-                <div className="grocery-list-items">                    
+                <div className="grocery-list-items">                 
                     {this.state.items.map(item =>
                         <li key={item.id} 
                             className="list-item" 
-                            onClick={ () => this.increaseQuantity(item) }
+                            onClick={ () => this.props.addme(item) }
+
                         >
                             <div className="item-container">
                                 <figure>
@@ -63,7 +46,6 @@ class GroceryContainer extends Component {
                         </li>                        
                     )}                
                 </div>
-
             </div>
         );
     }
